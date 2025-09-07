@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tree Removal Cost Guide - Crossville, TN</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.7;
+            color: #2d3748;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .hero-section {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 60px 40px;
+            margin-bottom: 40px;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(102, 126, 234, 0.1), transparent);
+            animation: shimmer 3s ease-in-out infinite;
+        }
+
+        @keyframes shimmer {
+            0%, 100% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+            50% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+        }
+
+        .hero-section > * {
+            position: relative;
+            z-index: 2;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #2d5a27, #4a7c59);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 20px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .hero-subtitle {
+            font-size: 1.3rem;
+            color: #4a5568;
+            margin-bottom: 30px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .main-content {
+            background: white;
+            border-radius: 15px;
+            padding: 50px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            font-size: 2.2rem;
+            color: #2d5a27;
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(135deg, #4a7c59, #2d5a27);
+            border-radius: 2px;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            color: #2d5a27;
+            margin: 30px 0 15px 0;
+            font-weight: 600;
+        }
+
+        p {
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+            color: #4a5568;
+        }
+
+        .highlight {
+            background: linear-gradient(135deg, #fef5e7, #fed7aa);
+            padding: 25px;
+            border-radius: 12px;
+            border-left: 5px solid #f59e0b;
+            margin: 30px 0;
+            box-shadow: 0 5px 15px rgba(245, 158, 11, 0.1);
+        }
+
+        .cost-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin: 30px 0;
+        }
+
+        .cost-card {
+            background: linear-gradient(135deg, #f0fff4, #dcfce7);
+            padding: 25px;
+            border-radius: 15px;
+            border: 2px solid #4ade80;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cost-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(135deg, #22c55e, #16a34a);
+        }
+
+        .cost-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(34, 197, 94, 0.2);
+        }
+
+        .cost-card h4 {
+            font-size: 1.2rem;
+            color: #166534;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .cost-card .price {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #15803d;
+            margin-bottom: 8px;
+        }
+
+        .factors-list {
+            counter-reset: factor-counter;
+        }
+
+        .factor-item {
+            counter-increment: factor-counter;
+            background: rgba(102, 126, 234, 0.05);
+            margin: 20px 0;
+            padding: 25px;
+            border-radius: 12px;
+            border-left: 4px solid #667eea;
+            position: relative;
+        }
+
+        .factor-item::before {
+            content: counter(factor-counter);
+            position: absolute;
+            left: -15px;
+            top: -10px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+
+        .factor-item h4 {
+            font-size: 1.2rem;
+            color: #4c51bf;
+            margin-bottom: 15px;
+            margin-left: 20px;
+        }
+
+        ul {
+            list-style: none;
+            margin-left: 20px;
+        }
+
+        ul li {
+            margin: 10px 0;
+            position: relative;
+            padding-left: 25px;
+            color: #4a5568;
+        }
+
+        ul li::before {
+            content: '🌳';
+            position: absolute;
+            left: 0;
+        }
+
+        .tips-section {
+            background: linear-gradient(135deg, #fef3c7, #fde68a);
+            padding: 30px;
+            border-radius: 15px;
+            margin: 30px 0;
+            border: 2px solid #f59e0b;
+        }
+
+        .tips-section h3 {
+            color: #92400e;
+            margin-bottom: 20px;
+        }
+
+        .tips-section ul li::before {
+            content: '💡';
+        }
+
+        .cta-section {
+            background: linear-gradient(135deg, #2d5a27, #4a7c59);
+            color: white;
+            padding: 40px;
+            border-radius: 15px;
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .cta-section h3 {
+            color: white;
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+        }
+
+        .cta-section p {
+            color: #e2e8f0;
+            font-size: 1.1rem;
+        }
+
+        .icon {
+            display: inline-block;
+            margin-right: 8px;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+            
+            .hero-section {
+                padding: 40px 25px;
+            }
+            
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            .main-content {
+                padding: 30px 25px;
+            }
+            
+            .cost-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .scroll-indicator {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: rgba(102, 126, 234, 0.2);
+            z-index: 1000;
+        }
+
+        .scroll-progress {
+            height: 100%;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            width: 0%;
+            transition: width 0.1s ease;
+        }
+    </style>
+</head>
+<body>
+    <div class="scroll-indicator">
+        <div class="scroll-progress" id="scrollProgress"></div>
+    </div>
+
+    <div class="container">
+        <div class="hero-section">
+            <h1>🌳 Tree Removal Costs in Crossville, TN</h1>
+            <p class="hero-subtitle">Your complete guide to understanding tree removal pricing, factors, and maintenance tips for Crossville homeowners</p>
+        </div>
+
+        <div class="main-content">
+            <p>Trees add beauty, shade, and value to homes in Crossville, TN. But sometimes, a tree becomes more of a risk than a resource—whether it's dead, diseased, storm-damaged, or dangerously close to your home. When that happens, tree removal is often the safest solution. One of the most common questions homeowners ask is: <strong>How much does tree removal cost in Crossville, TN?</strong></p>
+            
+            <p>The answer isn't always simple, because the price depends on several factors. Below, we'll break down the average costs, what influences the final bill, and how proper <strong><a href="https://why-tree-maintenance-in-crossville.netlify.app/
+">tree maintenance in Crossville, TN</a></strong> can help you avoid expensive removals in the future.</p>
+
+            <h2><span class="icon">💰</span>Average Cost of Tree Removal in Crossville, TN</h2>
+            
+            <div class="highlight">
+                <p><strong>On average, homeowners in Crossville can expect tree removal costs to range between $300 and $1,500 per tree.</strong> Smaller trees on open land typically fall toward the lower end of that range, while large, complex removals cost more. Extremely large or hazardous trees can sometimes exceed $2,000.</p>
+            </div>
+
+            <h2><span class="icon">📊</span>Factors That Affect Tree Removal Costs</h2>
+            <p>Several variables determine the final price for tree removal:</p>
+
+            <div class="factors-list">
+                <div class="factor-item">
+                    <h4>Tree Size and Height</h4>
+                    <div class="cost-grid">
+                        <div class="cost-card">
+                            <h4>Small Trees (up to 30 feet)</h4>
+                            <div class="price">$200 – $400</div>
+                        </div>
+                        <div class="cost-card">
+                            <h4>Medium Trees (30–60 feet)</h4>
+                            <div class="price">$400 – $800</div>
+                        </div>
+                        <div class="cost-card">
+                            <h4>Large Trees (60–80 feet)</h4>
+                            <div class="price">$800 – $1,500</div>
+                        </div>
+                        <div class="cost-card">
+                            <h4>Very Large Trees (over 80 feet)</h4>
+                            <div class="price">$1,500+</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="factor-item">
+                    <h4>Tree Condition</h4>
+                    <p>A dead, decayed, or storm-damaged tree can sometimes be more dangerous to remove, requiring special equipment and additional labor.</p>
+                </div>
+
+                <div class="factor-item">
+                    <h4>Location on Property</h4>
+                    <p>If a tree is easily accessible in an open yard, removal is faster and cheaper. But if it's close to your house, a fence, or power lines, the job requires more precision—and higher costs.</p>
+                </div>
+
+                <div class="factor-item">
+                    <h4>Emergency Tree Removal</h4>
+                    <p>Storms are common in Crossville, and emergency removal often comes with premium rates. Expect costs to rise if the work is needed immediately, especially outside normal business hours.</p>
+                </div>
+
+                <div class="factor-item">
+                    <h4>Additional Services</h4>
+                    <p>Some homeowners only need the tree cut down, while others request stump grinding, wood chipping, or complete debris removal. These extras usually add $100–$400 depending on the service.</p>
+                </div>
+            </div>
+
+            <h2><span class="icon">🪓</span>Cost of Stump Removal in Crossville</h2>
+            <div class="highlight">
+                <p>Tree removal doesn't always include stump removal. Stumps left behind can become safety hazards, attract pests, or regrow. <strong>Stump grinding in Crossville typically costs $100 to $300 per stump</strong>, depending on size and root depth.</p>
+            </div>
+
+            <div class="tips-section">
+                <h3><span class="icon">🌿</span>Why Regular Tree Maintenance Matters</h3>
+                <p>While tree removal is sometimes unavoidable, consistent <strong>tree maintenance in Crossville, TN</strong> can extend the life of your trees and save money in the long run. Services like pruning, trimming, and inspections help:</p>
+                <ul>
+                    <li>Prevent branches from becoming hazards during storms</li>
+                    <li>Identify disease or decay early before removal is necessary</li>
+                    <li>Keep trees healthy and enhance curb appeal</li>
+                </ul>
+                <p><strong>Spending a little on tree maintenance often prevents costly removals later.</strong></p>
+            </div>
+
+            <h2><span class="icon">🏆</span>Choosing a Tree Removal Company in Crossville</h2>
+            <p>When hiring a tree service, always consider:</p>
+            <ul>
+                <li><strong>Experience and insurance coverage</strong> (to protect your property)</li>
+                <li><strong>Customer reviews and local reputation</strong></li>
+                <li><strong>Clear written estimates</strong> to avoid surprises</li>
+            </ul>
+            <p>Local companies understand Crossville's terrain, weather, and tree species better than out-of-town providers.</p>
+
+            <div class="cta-section">
+                <h3>💡 Final Thoughts</h3>
+                <p>The cost of tree removal in Crossville, TN, varies widely depending on tree size, condition, and accessibility. While prices typically range from $300 to $1,500 per tree, the best way to know is by getting an on-site estimate from a professional.</p>
+                <p><strong>Remember: regular tree maintenance in Crossville, TN not only keeps your property safe and beautiful but also helps reduce the likelihood of expensive removals in the future.</strong></p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Smooth scroll progress indicator
+        window.addEventListener('scroll', function() {
+            const scrollProgress = document.getElementById('scrollProgress');
+            const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+            const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrollPercent = (scrollTop / scrollHeight) * 100;
+            scrollProgress.style.width = scrollPercent + '%';
+        });
+
+        // Add subtle animation to cards on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe cost cards and factor items
+        document.querySelectorAll('.cost-card, .factor-item').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'all 0.6s ease';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
